@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top 50 New AI/LLM GitHub Repos</title>
+  <meta name="description" content="Browse the top 50 new AI and LLM GitHub repositories from the last 30 days, sorted by stars." />
+  <meta property="og:title" content="Top 50 New AI/LLM GitHub Repos" />
+  <meta property="og:description" content="A polished, searchable directory of trending new AI/LLM GitHub repositories." />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0d1730;
+      --panel: rgba(13, 22, 40, 0.84);
+      --panel-strong: #12203a;
+      --text: #edf3ff;
+      --muted: #9cafcf;
+      --soft: #7f92b5;
+      --border: rgba(255,255,255,0.09);
+      --accent: #6ea8fe;
+      --accent2: #8d79ff;
+      --yellow: #ffd166;
+      --green: #2dd4bf;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28);
+      --radius: 20px;
+      --header-bg: rgba(7, 13, 24, 0.65);
+    }
+
+    body.light {
+      --bg: #f4f8ff;
+      --bg2: #ebf1ff;
+      --panel: rgba(255,255,255,0.82);
+      --panel-strong: #ffffff;
+      --text: #10203a;
+      --muted: #5f7397;
+      --soft: #7f8fab;
+      --border: rgba(16,32,58,0.10);
+      --accent: #2f6df6;
+      --accent2: #6d4dff;
+      --yellow: #c28700;
+      --green: #0f9f85;
+      --shadow: 0 18px 40px rgba(40,60,90,0.12);
+      --header-bg: rgba(255,255,255,0.72);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(110,168,254,0.14), transparent 24%),
+        radial-gradient(circle at 90% 5%, rgba(141,121,255,0.14), transparent 26%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      min-height: 100vh;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      width: min(1280px, calc(100% - 28px));
+      margin: 0 auto;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      box-shadow: var(--shadow);
+      font-size: 1.1rem;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link, .toggle {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 13px;
+      border-radius: 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .wrap {
+      width: min(1280px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 72px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 34px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      margin-bottom: 18px;
+    }
+
+    .hero:before {
+      content: "";
+      position: absolute;
+      right: -60px;
+      top: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(110,168,254,0.22), transparent 70%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      background: rgba(110,168,254,0.12);
+      border: 1px solid rgba(110,168,254,0.18);
+      color: var(--accent);
+    }
+
+    h1 {
+      margin: 16px 0 10px;
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      max-width: 950px;
+    }
+
+    .lede {
+      margin: 0;
+      max-width: 860px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .stat {
+      padding: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+    }
+
+    .stat-label {
+      color: var(--soft);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .section-title {
+      margin: 28px 0 14px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .featured-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .featured-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(18,29,53,0.95), rgba(12,21,39,0.97));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    body.light .featured-card,
+    body.light .repo-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.93), rgba(247,250,255,0.96));
+    }
+
+    .featured-card .big-rank {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+
+    .featured-card h3,
+    .repo-name {
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .featured-card h3 a,
+    .repo-name a {
+      text-decoration: none;
+    }
+
+    .featured-card h3 a:hover,
+    .repo-name a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .featured-desc, .repo-desc {
+      color: var(--muted);
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pill {
+      display: inline-flex;
+      padding: 7px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .controls {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: 1.5fr 190px 190px;
+      gap: 12px;
+    }
+
+    .input, .select {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      outline: none;
+      box-shadow: var(--shadow);
+    }
+
+    .meta-toolbar {
+      margin: 14px 0 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .results-text {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .category-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .category-chip {
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      font-size: 12px;
+    }
+
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .repo-card {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 270px;
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(18,29,53,0.95), rgba(12,21,39,0.97));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform .18s ease, border-color .18s ease;
+    }
+
+    .repo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(110,168,254,0.35);
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .rank {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.86rem;
+    }
+
+    .stars {
+      font-size: 0.9rem;
+      font-weight: 800;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--yellow);
+      background: rgba(255, 209, 102, 0.08);
+      border: 1px solid rgba(255, 209, 102, 0.16);
+      white-space: nowrap;
+    }
+
+    .owner {
+      color: var(--soft);
+      font-size: 0.9rem;
+    }
+
+    .bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 11px 13px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.94rem;
+      cursor: pointer;
+    }
+
+    .btn.primary {
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+    }
+
+    .pagination {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      min-width: 42px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .page-btn.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      border: none;
+    }
+
+    .empty {
+      display: none;
+      margin-top: 12px;
+      text-align: center;
+      color: var(--muted);
+      padding: 34px 16px;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+    }
+
+    .footer {
+      margin-top: 30px;
+      color: var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1100px) {
+      .featured-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+
+    @media (max-width: 900px) {
+      .controls { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .featured-grid { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .topbar-inner, .wrap { width: min(100% - 20px, 1280px); }
+      .hero { padding: 24px; border-radius: 22px; }
+      .repo-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✦</div>
+        <div>AI/LLM Repo Radar</div>
+      </div>
+      <div class="top-actions">
+        <a class="nav-link" href="#featured">Featured</a>
+        <a class="nav-link" href="#directory">Directory</a>
+        <button id="themeToggle" class="toggle">Toggle theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">GitHub snapshot • new repos • last 30 days</div>
+      <h1>Top 50 New AI/LLM GitHub Repositories</h1>
+      <p class="lede">
+        Explore a searchable, filterable, and paginated directory of newly created AI and LLM repositories,
+        ranked by stars from a recent GitHub search snapshot.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Projects shown</div>
+          <div class="stat-value">50</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Search query</div>
+          <div class="stat-value">ai OR llm</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Date window</div>
+          <div class="stat-value">Since 2026-04-25</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Sort basis</div>
+          <div class="stat-value">Stars</div>
+        </div>
+      </div>
+    </section>
+
+    <h2 id="featured" class="section-title">Featured Top 5</h2>
+    <section id="featuredGrid" class="featured-grid"></section>
+
+    <h2 id="directory" class="section-title">Browse all repositories</h2>
+
+    <section class="controls">
+      <input id="searchInput" class="input" type="text" placeholder="Search by repo, owner, description, or category..." />
+      <select id="sortSelect" class="select">
+        <option value="stars-desc">Stars: High to low</option>
+        <option value="stars-asc">Stars: Low to high</option>
+        <option value="name-asc">Name: A to Z</option>
+        <option value="name-desc">Name: Z to A</option>
+        <option value="rank-asc">Original rank</option>
+      </select>
+      <select id="categorySelect" class="select">
+        <option value="all">All categories</option>
+        <option value="agent">Agents</option>
+        <option value="coding">Coding</option>
+        <option value="infra">Infra</option>
+        <option value="learning">Learning</option>
+        <option value="security">Security</option>
+        <option value="tooling">Tooling</option>
+        <option value="creative">Creative</option>
+        <option value="data">Data</option>
+        <option value="other">Other</option>
+      </select>
+    </section>
+
+    <div class="meta-toolbar">
+      <div class="results-text"><span id="visibleCount">50</span> matching projects • page <span id="currentPageLabel">1</span></div>
+      <div id="categoryStats" class="category-stats"></div>
+    </div>
+
+    <section id="repoGrid" class="repo-grid"></section>
+    <div id="emptyState" class="empty">No projects match your current filters.</div>
+    <div id="pagination" class="pagination"></div>
+
+    <p class="footer">
+      Built from a GitHub search snapshot of repositories created on or after 2026-04-25.
+    </p>
+  </main>
+
+  <script>
+    const repos = [
+      { rank: 1, name: "nexu-io/html-anything", owner: "nexu-io", repo: "html-anything", stars: 4799, category: "creative", url: "https://github.com/nexu-io/html-anything", desc: "The agentic HTML editor — your local AI agent writes the HTML, you ship it." },
+      { rank: 2, name: "willchen96/mike", owner: "willchen96", repo: "mike", stars: 3474, category: "tooling", url: "https://github.com/willchen96/mike", desc: "OSS AI Legal Platform." },
+      { rank: 3, name: "strukto-ai/mirage", owner: "strukto-ai", repo: "mirage", stars: 2603, category: "infra", url: "https://github.com/strukto-ai/mirage", desc: "A Unified Virtual Filesystem For AI Agents." },
+      { rank: 4, name: "huangserva/3DCellForge", owner: "huangserva", repo: "3DCellForge", stars: 2324, category: "creative", url: "https://github.com/huangserva/3DCellForge", desc: "AI-powered interactive 3D model generation, inspection, and presentation studio." },
+      { rank: 5, name: "yaojingang/yao-open-prompts", owner: "yaojingang", repo: "yao-open-prompts", stars: 2253, category: "learning", url: "https://github.com/yaojingang/yao-open-prompts", desc: "Chinese AI prompt library covering work, learning, content, marketing, and life scenarios." },
+      { rank: 6, name: "simonlin1212/a-stock-data", owner: "simonlin1212", repo: "a-stock-data", stars: 2079, category: "data", url: "https://github.com/simonlin1212/a-stock-data", desc: "Full-stack China A-Share data toolkit for AI coding assistants." },
+      { rank: 7, name: "Nutlope/hallmark", owner: "Nutlope", repo: "hallmark", stars: 1845, category: "creative", url: "https://github.com/Nutlope/hallmark", desc: "Anti-AI-slop design skill for Claude Code, Cursor, and Codex." },
+      { rank: 8, name: "mattpocock/dictionary-of-ai-coding", owner: "mattpocock", repo: "dictionary-of-ai-coding", stars: 1811, category: "learning", url: "https://github.com/mattpocock/dictionary-of-ai-coding", desc: "AI coding jargon, explained in plain English." },
+      { rank: 9, name: "raiyanyahya/how-to-train-your-gpt", owner: "raiyanyahya", repo: "how-to-train-your-gpt", stars: 1795, category: "learning", url: "https://github.com/raiyanyahya/how-to-train-your-gpt", desc: "Build a modern LLM from scratch with every line commented." },
+      { rank: 10, name: "opensquilla/opensquilla", owner: "opensquilla", repo: "opensquilla", stars: 1722, category: "agent", url: "https://github.com/opensquilla/opensquilla", desc: "Token-efficient AI agent with higher intelligence density." },
+      { rank: 11, name: "WenyuChiou/awesome-agentic-ai-zh", owner: "WenyuChiou", repo: "awesome-agentic-ai-zh", stars: 1703, category: "learning", url: "https://github.com/WenyuChiou/awesome-agentic-ai-zh", desc: "Trilingual learning roadmap for agentic AI from LLM basics to multi-agent systems." },
+      { rank: 12, name: "Open-Less/openless", owner: "Open-Less", repo: "openless", stars: 1631, category: "tooling", url: "https://github.com/Open-Less/openless", desc: "Open-source voice input for macOS and Windows that polishes text into any app." },
+      { rank: 13, name: "Doorman11991/smallcode", owner: "Doorman11991", repo: "smallcode", stars: 1383, category: "coding", url: "https://github.com/Doorman11991/smallcode", desc: "AI coding agent optimized for small LLMs." },
+      { rank: 14, name: "datawhalechina/Agent-Learning-Hub", owner: "datawhalechina", repo: "Agent-Learning-Hub", stars: 1345, category: "learning", url: "https://github.com/datawhalechina/Agent-Learning-Hub", desc: "AI agent learning route and resource collection." },
+      { rank: 15, name: "StartupHakk/OpenMonoAgent.ai", owner: "StartupHakk", repo: "OpenMonoAgent.ai", stars: 1303, category: "coding", url: "https://github.com/StartupHakk/OpenMonoAgent.ai", desc: "Terminal-native coding agent powered by local LLMs." },
+      { rank: 16, name: "lightseekorg/tokenspeed", owner: "lightseekorg", repo: "tokenspeed", stars: 1132, category: "infra", url: "https://github.com/lightseekorg/tokenspeed", desc: "A speed-of-light LLM inference engine." },
+      { rank: 17, name: "noonghunna/club-3090", owner: "noonghunna", repo: "club-3090", stars: 1107, category: "infra", url: "https://github.com/noonghunna/club-3090", desc: "Community recipes for serving LLMs on RTX 3090/CUDA GPUs." },
+      { rank: 18, name: "beenuar/AiSOC", owner: "beenuar", repo: "AiSOC", stars: 1101, category: "security", url: "https://github.com/beenuar/AiSOC", desc: "Open-source AI-powered Security Operations Center." },
+      { rank: 19, name: "anysearch-ai/anysearch-skill", owner: "anysearch-ai", repo: "anysearch-skill", stars: 1086, category: "tooling", url: "https://github.com/anysearch-ai/anysearch-skill", desc: "Unified real-time search engine skill for AI agents." },
+      { rank: 20, name: "microsoft/AI-Engineering-Coach", owner: "microsoft", repo: "AI-Engineering-Coach", stars: 1084, category: "learning", url: "https://github.com/microsoft/AI-Engineering-Coach", desc: "Better agentic engineering." },
+      { rank: 21, name: "Helvesec/rmux", owner: "Helvesec", repo: "rmux", stars: 1075, category: "tooling", url: "https://github.com/Helvesec/rmux", desc: "Universal Rust multiplexer with a typed SDK to drive CLI or TUI apps from code." },
+      { rank: 22, name: "ka-pi-ba-la/AIbijia", owner: "ka-pi-ba-la", repo: "AIbijia", stars: 1062, category: "other", url: "https://github.com/ka-pi-ba-la/AIbijia", desc: "Repository sharing lower-cost AI token information." },
+      { rank: 23, name: "laishiwen/sven-family", owner: "laishiwen", repo: "sven-family", stars: 1037, category: "creative", url: "https://github.com/laishiwen/sven-family", desc: "AI-native product suite connecting creation, collaboration, publishing, and operations." },
+      { rank: 24, name: "sandeco/reversa", owner: "sandeco", repo: "reversa", stars: 1029, category: "coding", url: "https://github.com/sandeco/reversa", desc: "Transform legacy systems into executable specs for AI coding agents." },
+      { rank: 25, name: "jmerelnyc/Photo-agents", owner: "jmerelnyc", repo: "Photo-agents", stars: 1020, category: "agent", url: "https://github.com/jmerelnyc/Photo-agents", desc: "Autonomous self-evolving agents with vision-grounded layered memory." },
+      { rank: 26, name: "feder-cr/invisible_playwright", owner: "feder-cr", repo: "invisible_playwright", stars: 1002, category: "tooling", url: "https://github.com/feder-cr/invisible_playwright", desc: "Stealth Firefox that passes bot detection tests; drop-in Playwright replacement." },
+      { rank: 27, name: "google-antigravity/antigravity-sdk-python", owner: "google-antigravity", repo: "antigravity-sdk-python", stars: 974, category: "agent", url: "https://github.com/google-antigravity/antigravity-sdk-python", desc: "Python library for building AI agents with Google Antigravity." },
+      { rank: 28, name: "alvinunreal/openpets", owner: "alvinunreal", repo: "openpets", stars: 946, category: "creative", url: "https://github.com/alvinunreal/openpets", desc: "Desktop pets for AI coding agents with live coding status." },
+      { rank: 29, name: "lessweb/deepcode-cli", owner: "lessweb", repo: "deepcode-cli", stars: 889, category: "coding", url: "https://github.com/lessweb/deepcode-cli", desc: "Terminal AI coding assistant optimized for deep reasoning and agent skills." },
+      { rank: 30, name: "nduckmink/arkon", owner: "nduckmink", repo: "arkon", stars: 864, category: "infra", url: "https://github.com/nduckmink/arkon", desc: "Enterprise AI knowledge hub and MCP server for RAG context and policy management." },
+      { rank: 31, name: "Snaplii-Inc/agent-to-merchant-payments", owner: "Snaplii-Inc", repo: "agent-to-merchant-payments", stars: 805, category: "agent", url: "https://github.com/Snaplii-Inc/agent-to-merchant-payments", desc: "A payment layer for AI agents using tokenized merchant gift cards." },
+      { rank: 32, name: "raindrop-ai/workshop", owner: "raindrop-ai", repo: "workshop", stars: 732, category: "tooling", url: "https://github.com/raindrop-ai/workshop", desc: "Give your coding agent the power to write and run agent evals." },
+      { rank: 33, name: "Continuum-AI-Corp/OrcaRouter-Lite", owner: "Continuum-AI-Corp", repo: "OrcaRouter-Lite", stars: 712, category: "infra", url: "https://github.com/Continuum-AI-Corp/OrcaRouter-Lite", desc: "Self-hosted LLM router with an OpenAI-compatible interface." },
+      { rank: 34, name: "ComposioHQ/trustclaw", owner: "ComposioHQ", repo: "trustclaw", stars: 709, category: "agent", url: "https://github.com/ComposioHQ/trustclaw", desc: "A self-hostable personal AI agent with vector memory and Telegram integration." },
+      { rank: 35, name: "deeplethe/forkd", owner: "deeplethe", repo: "forkd", stars: 708, category: "infra", url: "https://github.com/deeplethe/forkd", desc: "Fork() for AI agent microVMs with fast branching and snapshot CoW." },
+      { rank: 36, name: "lynote-ai/humanize-text", owner: "lynote-ai", repo: "humanize-text", stars: 684, category: "tooling", url: "https://github.com/lynote-ai/humanize-text", desc: "Open-source AI text humanizer for rewriting AI-generated content." },
+      { rank: 37, name: "TeamDev-IP/MoBrowser-App-Icon-Maker", owner: "TeamDev-IP", repo: "MoBrowser-App-Icon-Maker", stars: 665, category: "creative", url: "https://github.com/TeamDev-IP/MoBrowser-App-Icon-Maker", desc: "Generate macOS app icons using AI." },
+      { rank: 38, name: "alchaincyf/huashu-md-html", owner: "alchaincyf", repo: "huashu-md-html", stars: 664, category: "tooling", url: "https://github.com/alchaincyf/huashu-md-html", desc: "Markdown/HTML bidirectional pipeline for AI content workflows." },
+      { rank: 39, name: "ChristianJR19/grok-animus", owner: "ChristianJR19", repo: "grok-animus", stars: 622, category: "agent", url: "https://github.com/ChristianJR19/grok-animus", desc: "Persistent AI companion engine with personality, memory, dreams, and evolution." },
+      { rank: 40, name: "regent-vcs/re_gent", owner: "regent-vcs", repo: "re_gent", stars: 613, category: "coding", url: "https://github.com/regent-vcs/re_gent", desc: "Version control for AI coding agents." },
+      { rank: 41, name: "simonlin1212/TradingAgents-astock", owner: "simonlin1212", repo: "TradingAgents-astock", stars: 605, category: "agent", url: "https://github.com/simonlin1212/TradingAgents-astock", desc: "A-share multi-agent investment research framework." },
+      { rank: 42, name: "KevRojo/Dulus", owner: "KevRojo", repo: "Dulus", stars: 589, category: "coding", url: "https://github.com/KevRojo/Dulus", desc: "Free CLI agent that turns browser sessions into a tool-calling terminal agent." },
+      { rank: 43, name: "jherrodthomas/robotics-skills-suite", owner: "jherrodthomas", repo: "robotics-skills-suite", stars: 564, category: "tooling", url: "https://github.com/jherrodthomas/robotics-skills-suite", desc: "Audit-ready Claude skills for robotics, AI/ML, ROS2, and compliance workflows." },
+      { rank: 44, name: "anysearch-ai/anysearch-mcp-server", owner: "anysearch-ai", repo: "anysearch-mcp-server", stars: 555, category: "tooling", url: "https://github.com/anysearch-ai/anysearch-mcp-server", desc: "Unified real-time search engine skill for AI agents via MCP." },
+      { rank: 45, name: "yuanzhongqiao/deepmlab", owner: "yuanzhongqiao", repo: "deepmlab", stars: 540, category: "tooling", url: "https://github.com/yuanzhongqiao/deepmlab", desc: "Open-source MATLAB alternative with LLM-driven mathematical modeling." },
+      { rank: 46, name: "ProAlit/aio-downloader", owner: "ProAlit", repo: "aio-downloader", stars: 532, category: "other", url: "https://github.com/ProAlit/aio-downloader", desc: "A downloader project that appeared in the broader AI/LLM search results." },
+      { rank: 47, name: "mrslimslim/gpt-image-canvas", owner: "mrslimslim", repo: "gpt-image-canvas", stars: 528, category: "creative", url: "https://github.com/mrslimslim/gpt-image-canvas", desc: "Local professional AI canvas built with tldraw." },
+      { rank: 48, name: "darkrishabh/agent-skills-eval", owner: "darkrishabh", repo: "agent-skills-eval", stars: 526, category: "tooling", url: "https://github.com/darkrishabh/agent-skills-eval", desc: "Test runner for AI agent skills." },
+      { rank: 49, name: "Octoday-Hub/Embodied-AI", owner: "Octoday-Hub", repo: "Embodied-AI", stars: 518, category: "learning", url: "https://github.com/Octoday-Hub/Embodied-AI", desc: "Embodied AI knowledge index and industry map." },
+      { rank: 50, name: "JustLikeCheese/LGBT-Prompt", owner: "JustLikeCheese", repo: "LGBT-Prompt", stars: 506, category: "other", url: "https://github.com/JustLikeCheese/LGBT-Prompt", desc: "A prompt-focused repository that appeared in the AI/LLM search results." }
+    ];
+
+    const featuredGrid = document.getElementById("featuredGrid");
+    const repoGrid = document.getElementById("repoGrid");
+    const pagination = document.getElementById("pagination");
+    const searchInput = document.getElementById("searchInput");
+    const sortSelect = document.getElementById("sortSelect");
+    const categorySelect = document.getElementById("categorySelect");
+    const visibleCount = document.getElementById("visibleCount");
+    const currentPageLabel = document.getElementById("currentPageLabel");
+    const emptyState = document.getElementById("emptyState");
+    const categoryStats = document.getElementById("categoryStats");
+    const themeToggle = document.getElementById("themeToggle");
+
+    const perPage = 12;
+    let currentPage = 1;
+    const maxStars = Math.max(...repos.map(r => r.stars));
+
+    function formatStars(n) {
+      return n.toLocaleString();
+    }
+
+    function categoryLabel(cat) {
+      return ({
+        agent: "Agent",
+        coding: "Coding",
+        infra: "Infra",
+        learning: "Learning",
+        security: "Security",
+        tooling: "Tooling",
+        creative: "Creative",
+        data: "Data",
+        other: "Other"
+      })[cat] || cat;
+    }
+
+    function sortRepos(items, sortBy) {
+      const arr = [...items];
+      switch (sortBy) {
+        case "stars-asc": arr.sort((a, b) => a.stars - b.stars); break;
+        case "name-asc": arr.sort((a, b) => a.name.localeCompare(b.name)); break;
+        case "name-desc": arr.sort((a, b) => b.name.localeCompare(a.name)); break;
+        case "rank-asc": arr.sort((a, b) => a.rank - b.rank); break;
+        default: arr.sort((a, b) => b.stars - a.stars);
+      }
+      return arr;
+    }
+
+    function filterRepos() {
+      const q = searchInput.value.trim().toLowerCase();
+      const category = categorySelect.value;
+
+      return repos.filter(repo => {
+        const matchesText =
+          !q ||
+          repo.name.toLowerCase().includes(q) ||
+          repo.owner.toLowerCase().includes(q) ||
+          repo.repo.toLowerCase().includes(q) ||
+          repo.desc.toLowerCase().includes(q) ||
+          repo.category.toLowerCase().includes(q);
+
+        const matchesCategory = category === "all" || repo.category === category;
+        return matchesText && matchesCategory;
+      });
+    }
+
+    function buildFeatured() {
+      const topFive = [...repos].sort((a, b) => b.stars - a.stars).slice(0, 5);
+      featuredGrid.innerHTML = "";
+      topFive.forEach(repo => {
+        const card = document.createElement("article");
+        card.className = "featured-card";
+        card.innerHTML = `
+          <div class="big-rank">Featured #${repo.rank}</div>
+          <h3><a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a></h3>
+          <p class="featured-desc">${repo.desc}</p>
+          <div class="pill-row">
+            <span class="pill">${categoryLabel(repo.category)}</span>
+            <span class="pill">★ ${formatStars(repo.stars)}</span>
+          </div>
+          <div class="actions">
+            <a class="btn primary" href="${repo.url}" target="_blank" rel="noreferrer">Open Repo</a>
+          </div>
+        `;
+        featuredGrid.appendChild(card);
+      });
+    }
+
+    function createRepoCard(repo) {
+      const pct = Math.max(8, (repo.stars / maxStars) * 100);
+      const card = document.createElement("article");
+      card.className = "repo-card";
+      card.innerHTML = `
+        <div class="row">
+          <div class="rank">#${repo.rank}</div>
+          <div class="stars">★ ${formatStars(repo.stars)}</div>
+        </div>
+
+        <div>
+          <h3 class="repo-name">
+            <a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a>
+          </h3>
+          <div class="owner">@${repo.owner}</div>
+        </div>
+
+        <div class="pill-row">
+          <span class="pill">${categoryLabel(repo.category)}</span>
+          <span class="pill">${formatStars(repo.stars)} stars</span>
+        </div>
+
+        <p class="repo-desc">${repo.desc}</p>
+
+        <div class="bar"><span style="width:${pct}%"></span></div>
+
+        <div class="actions">
+          <a class="btn primary" href="${repo.url}" target="_blank" rel="noreferrer">Open Repo</a>
+          <button class="btn" data-copy="${repo.url}">Copy Link</button>
+        </div>
+      `;
+      return card;
+    }
+
+    function bindCopyButtons() {
+      repoGrid.querySelectorAll("[data-copy]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const text = btn.getAttribute("data-copy");
+          const prev = btn.textContent;
+          try {
+            await navigator.clipboard.writeText(text);
+            btn.textContent = "Copied!";
+          } catch {
+            btn.textContent = "Copy failed";
+          }
+          setTimeout(() => btn.textContent = prev, 1200);
+        });
+      });
+    }
+
+    function renderCategoryStats(items) {
+      const counts = {};
+      items.forEach(item => counts[item.category] = (counts[item.category] || 0) + 1);
+
+      categoryStats.innerHTML = "";
+      Object.entries(counts)
+        .sort((a, b) => b[1] - a[1])
+        .forEach(([cat, count]) => {
+          const el = document.createElement("span");
+          el.className = "category-chip";
+          el.textContent = `${categoryLabel(cat)}: ${count}`;
+          categoryStats.appendChild(el);
+        });
+    }
+
+    function renderPagination(totalItems, current) {
+      const totalPages = Math.ceil(totalItems / perPage);
+      pagination.innerHTML = "";
+
+      if (totalPages <= 1) return;
+
+      const addBtn = (label, page, active = false) => {
+        const btn = document.createElement("button");
+        btn.className = "page-btn" + (active ? " active" : "");
+        btn.textContent = label;
+        btn.addEventListener("click", () => {
+          currentPage = page;
+          render();
+          window.scrollTo({ top: document.getElementById("directory").offsetTop - 70, behavior: "smooth" });
+        });
+        pagination.appendChild(btn);
+      };
+
+      if (current > 1) addBtn("Prev", current - 1);
+
+      for (let p = 1; p <= totalPages; p++) {
+        addBtn(String(p), p, p === current);
+      }
+
+      if (current < totalPages) addBtn("Next", current + 1);
+    }
+
+    function render() {
+      let filtered = filterRepos();
+      filtered = sortRepos(filtered, sortSelect.value);
+
+      const total = filtered.length;
+      const totalPages = Math.max(1, Math.ceil(total / perPage));
+      if (currentPage > totalPages) currentPage = 1;
+
+      const start = (currentPage - 1) * perPage;
+      const pageItems = filtered.slice(start, start + perPage);
+
+      repoGrid.innerHTML = "";
+      pageItems.forEach(repo => repoGrid.appendChild(createRepoCard(repo)));
+
+      visibleCount.textContent = total;
+      currentPageLabel.textContent = currentPage;
+      emptyState.style.display = total ? "none" : "block";
+      pagination.style.display = total ? "flex" : "none";
+
+      renderPagination(total, currentPage);
+      renderCategoryStats(filtered);
+      bindCopyButtons();
+    }
+
+    searchInput.addEventListener("input", () => {
+      currentPage = 1;
+      render();
+    });
+
+    sortSelect.addEventListener("change", () => {
+      currentPage = 1;
+      render();
+    });
+
+    categorySelect.addEventListener("change", () => {
+      currentPage = 1;
+      render();
+    });
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("light");
+      localStorage.setItem("repo-radar-theme", document.body.classList.contains("light") ? "light" : "dark");
+    });
+
+    const savedTheme = localStorage.getItem("repo-radar-theme");
+    if (savedTheme === "light") document.body.classList.add("light");
+
+    buildFeatured();
+    render();
+  </script>
+</body>
+</html>
