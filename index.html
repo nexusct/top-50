@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top 50 New AI/LLM GitHub Repos</title>
-  <meta name="description" content="Browse the top 50 new AI and LLM GitHub repositories from the last 30 days, sorted by stars." />
-  <meta property="og:title" content="Top 50 New AI/LLM GitHub Repos" />
+  <title>Top 100 New AI/LLM GitHub Repos</title>
+  <meta name="description" content="Browse the top 100 new AI and LLM GitHub repositories from the last 30 days, sorted by stars." />
+  <meta property="og:title" content="Top 100 New AI/LLM GitHub Repos" />
   <meta property="og:description" content="A polished, searchable directory of trending new AI/LLM GitHub repositories." />
   <meta name="theme-color" content="#0b1220" />
   <style>
@@ -497,7 +497,7 @@
   <main class="wrap">
     <section class="hero">
       <div class="eyebrow">GitHub snapshot • new repos • last 30 days</div>
-      <h1>Top 50 New AI/LLM GitHub Repositories</h1>
+      <h1>Top 100 New AI/LLM GitHub Repositories</h1>
       <p class="lede">
         Explore a searchable, filterable, and paginated directory of newly created AI and LLM repositories,
         ranked by stars from a recent GitHub search snapshot.
@@ -506,7 +506,7 @@
       <div class="stats">
         <div class="stat">
           <div class="stat-label">Projects shown</div>
-          <div class="stat-value">50</div>
+          <div class="stat-value">100</div>
         </div>
         <div class="stat">
           <div class="stat-label">Search query</div>
@@ -514,7 +514,7 @@
         </div>
         <div class="stat">
           <div class="stat-label">Date window</div>
-          <div class="stat-value">Since 2026-04-25</div>
+          <div class="stat-value">Since 2026-04-27</div>
         </div>
         <div class="stat">
           <div class="stat-label">Sort basis</div>
@@ -552,7 +552,7 @@
     </section>
 
     <div class="meta-toolbar">
-      <div class="results-text"><span id="visibleCount">50</span> matching projects • page <span id="currentPageLabel">1</span></div>
+      <div class="results-text"><span id="visibleCount">100</span> matching projects • page <span id="currentPageLabel">1</span></div>
       <div id="categoryStats" class="category-stats"></div>
     </div>
 
@@ -561,62 +561,112 @@
     <div id="pagination" class="pagination"></div>
 
     <p class="footer">
-      Built from a GitHub search snapshot of repositories created on or after 2026-04-25.
+      Built from a GitHub search snapshot of repositories created on or after 2026-04-27 (snapshot 2026-05-27).
     </p>
   </main>
 
   <script>
     const repos = [
-      { rank: 1, name: "nexu-io/html-anything", owner: "nexu-io", repo: "html-anything", stars: 4799, category: "creative", url: "https://github.com/nexu-io/html-anything", desc: "The agentic HTML editor — your local AI agent writes the HTML, you ship it." },
-      { rank: 2, name: "willchen96/mike", owner: "willchen96", repo: "mike", stars: 3474, category: "tooling", url: "https://github.com/willchen96/mike", desc: "OSS AI Legal Platform." },
-      { rank: 3, name: "strukto-ai/mirage", owner: "strukto-ai", repo: "mirage", stars: 2603, category: "infra", url: "https://github.com/strukto-ai/mirage", desc: "A Unified Virtual Filesystem For AI Agents." },
-      { rank: 4, name: "huangserva/3DCellForge", owner: "huangserva", repo: "3DCellForge", stars: 2324, category: "creative", url: "https://github.com/huangserva/3DCellForge", desc: "AI-powered interactive 3D model generation, inspection, and presentation studio." },
-      { rank: 5, name: "yaojingang/yao-open-prompts", owner: "yaojingang", repo: "yao-open-prompts", stars: 2253, category: "learning", url: "https://github.com/yaojingang/yao-open-prompts", desc: "Chinese AI prompt library covering work, learning, content, marketing, and life scenarios." },
-      { rank: 6, name: "simonlin1212/a-stock-data", owner: "simonlin1212", repo: "a-stock-data", stars: 2079, category: "data", url: "https://github.com/simonlin1212/a-stock-data", desc: "Full-stack China A-Share data toolkit for AI coding assistants." },
-      { rank: 7, name: "Nutlope/hallmark", owner: "Nutlope", repo: "hallmark", stars: 1845, category: "creative", url: "https://github.com/Nutlope/hallmark", desc: "Anti-AI-slop design skill for Claude Code, Cursor, and Codex." },
-      { rank: 8, name: "mattpocock/dictionary-of-ai-coding", owner: "mattpocock", repo: "dictionary-of-ai-coding", stars: 1811, category: "learning", url: "https://github.com/mattpocock/dictionary-of-ai-coding", desc: "AI coding jargon, explained in plain English." },
-      { rank: 9, name: "raiyanyahya/how-to-train-your-gpt", owner: "raiyanyahya", repo: "how-to-train-your-gpt", stars: 1795, category: "learning", url: "https://github.com/raiyanyahya/how-to-train-your-gpt", desc: "Build a modern LLM from scratch with every line commented." },
-      { rank: 10, name: "opensquilla/opensquilla", owner: "opensquilla", repo: "opensquilla", stars: 1722, category: "agent", url: "https://github.com/opensquilla/opensquilla", desc: "Token-efficient AI agent with higher intelligence density." },
-      { rank: 11, name: "WenyuChiou/awesome-agentic-ai-zh", owner: "WenyuChiou", repo: "awesome-agentic-ai-zh", stars: 1703, category: "learning", url: "https://github.com/WenyuChiou/awesome-agentic-ai-zh", desc: "Trilingual learning roadmap for agentic AI from LLM basics to multi-agent systems." },
-      { rank: 12, name: "Open-Less/openless", owner: "Open-Less", repo: "openless", stars: 1631, category: "tooling", url: "https://github.com/Open-Less/openless", desc: "Open-source voice input for macOS and Windows that polishes text into any app." },
-      { rank: 13, name: "Doorman11991/smallcode", owner: "Doorman11991", repo: "smallcode", stars: 1383, category: "coding", url: "https://github.com/Doorman11991/smallcode", desc: "AI coding agent optimized for small LLMs." },
-      { rank: 14, name: "datawhalechina/Agent-Learning-Hub", owner: "datawhalechina", repo: "Agent-Learning-Hub", stars: 1345, category: "learning", url: "https://github.com/datawhalechina/Agent-Learning-Hub", desc: "AI agent learning route and resource collection." },
-      { rank: 15, name: "StartupHakk/OpenMonoAgent.ai", owner: "StartupHakk", repo: "OpenMonoAgent.ai", stars: 1303, category: "coding", url: "https://github.com/StartupHakk/OpenMonoAgent.ai", desc: "Terminal-native coding agent powered by local LLMs." },
-      { rank: 16, name: "lightseekorg/tokenspeed", owner: "lightseekorg", repo: "tokenspeed", stars: 1132, category: "infra", url: "https://github.com/lightseekorg/tokenspeed", desc: "A speed-of-light LLM inference engine." },
-      { rank: 17, name: "noonghunna/club-3090", owner: "noonghunna", repo: "club-3090", stars: 1107, category: "infra", url: "https://github.com/noonghunna/club-3090", desc: "Community recipes for serving LLMs on RTX 3090/CUDA GPUs." },
-      { rank: 18, name: "beenuar/AiSOC", owner: "beenuar", repo: "AiSOC", stars: 1101, category: "security", url: "https://github.com/beenuar/AiSOC", desc: "Open-source AI-powered Security Operations Center." },
-      { rank: 19, name: "anysearch-ai/anysearch-skill", owner: "anysearch-ai", repo: "anysearch-skill", stars: 1086, category: "tooling", url: "https://github.com/anysearch-ai/anysearch-skill", desc: "Unified real-time search engine skill for AI agents." },
-      { rank: 20, name: "microsoft/AI-Engineering-Coach", owner: "microsoft", repo: "AI-Engineering-Coach", stars: 1084, category: "learning", url: "https://github.com/microsoft/AI-Engineering-Coach", desc: "Better agentic engineering." },
-      { rank: 21, name: "Helvesec/rmux", owner: "Helvesec", repo: "rmux", stars: 1075, category: "tooling", url: "https://github.com/Helvesec/rmux", desc: "Universal Rust multiplexer with a typed SDK to drive CLI or TUI apps from code." },
-      { rank: 22, name: "ka-pi-ba-la/AIbijia", owner: "ka-pi-ba-la", repo: "AIbijia", stars: 1062, category: "other", url: "https://github.com/ka-pi-ba-la/AIbijia", desc: "Repository sharing lower-cost AI token information." },
-      { rank: 23, name: "laishiwen/sven-family", owner: "laishiwen", repo: "sven-family", stars: 1037, category: "creative", url: "https://github.com/laishiwen/sven-family", desc: "AI-native product suite connecting creation, collaboration, publishing, and operations." },
-      { rank: 24, name: "sandeco/reversa", owner: "sandeco", repo: "reversa", stars: 1029, category: "coding", url: "https://github.com/sandeco/reversa", desc: "Transform legacy systems into executable specs for AI coding agents." },
-      { rank: 25, name: "jmerelnyc/Photo-agents", owner: "jmerelnyc", repo: "Photo-agents", stars: 1020, category: "agent", url: "https://github.com/jmerelnyc/Photo-agents", desc: "Autonomous self-evolving agents with vision-grounded layered memory." },
-      { rank: 26, name: "feder-cr/invisible_playwright", owner: "feder-cr", repo: "invisible_playwright", stars: 1002, category: "tooling", url: "https://github.com/feder-cr/invisible_playwright", desc: "Stealth Firefox that passes bot detection tests; drop-in Playwright replacement." },
-      { rank: 27, name: "google-antigravity/antigravity-sdk-python", owner: "google-antigravity", repo: "antigravity-sdk-python", stars: 974, category: "agent", url: "https://github.com/google-antigravity/antigravity-sdk-python", desc: "Python library for building AI agents with Google Antigravity." },
-      { rank: 28, name: "alvinunreal/openpets", owner: "alvinunreal", repo: "openpets", stars: 946, category: "creative", url: "https://github.com/alvinunreal/openpets", desc: "Desktop pets for AI coding agents with live coding status." },
-      { rank: 29, name: "lessweb/deepcode-cli", owner: "lessweb", repo: "deepcode-cli", stars: 889, category: "coding", url: "https://github.com/lessweb/deepcode-cli", desc: "Terminal AI coding assistant optimized for deep reasoning and agent skills." },
-      { rank: 30, name: "nduckmink/arkon", owner: "nduckmink", repo: "arkon", stars: 864, category: "infra", url: "https://github.com/nduckmink/arkon", desc: "Enterprise AI knowledge hub and MCP server for RAG context and policy management." },
-      { rank: 31, name: "Snaplii-Inc/agent-to-merchant-payments", owner: "Snaplii-Inc", repo: "agent-to-merchant-payments", stars: 805, category: "agent", url: "https://github.com/Snaplii-Inc/agent-to-merchant-payments", desc: "A payment layer for AI agents using tokenized merchant gift cards." },
-      { rank: 32, name: "raindrop-ai/workshop", owner: "raindrop-ai", repo: "workshop", stars: 732, category: "tooling", url: "https://github.com/raindrop-ai/workshop", desc: "Give your coding agent the power to write and run agent evals." },
-      { rank: 33, name: "Continuum-AI-Corp/OrcaRouter-Lite", owner: "Continuum-AI-Corp", repo: "OrcaRouter-Lite", stars: 712, category: "infra", url: "https://github.com/Continuum-AI-Corp/OrcaRouter-Lite", desc: "Self-hosted LLM router with an OpenAI-compatible interface." },
-      { rank: 34, name: "ComposioHQ/trustclaw", owner: "ComposioHQ", repo: "trustclaw", stars: 709, category: "agent", url: "https://github.com/ComposioHQ/trustclaw", desc: "A self-hostable personal AI agent with vector memory and Telegram integration." },
-      { rank: 35, name: "deeplethe/forkd", owner: "deeplethe", repo: "forkd", stars: 708, category: "infra", url: "https://github.com/deeplethe/forkd", desc: "Fork() for AI agent microVMs with fast branching and snapshot CoW." },
-      { rank: 36, name: "lynote-ai/humanize-text", owner: "lynote-ai", repo: "humanize-text", stars: 684, category: "tooling", url: "https://github.com/lynote-ai/humanize-text", desc: "Open-source AI text humanizer for rewriting AI-generated content." },
-      { rank: 37, name: "TeamDev-IP/MoBrowser-App-Icon-Maker", owner: "TeamDev-IP", repo: "MoBrowser-App-Icon-Maker", stars: 665, category: "creative", url: "https://github.com/TeamDev-IP/MoBrowser-App-Icon-Maker", desc: "Generate macOS app icons using AI." },
-      { rank: 38, name: "alchaincyf/huashu-md-html", owner: "alchaincyf", repo: "huashu-md-html", stars: 664, category: "tooling", url: "https://github.com/alchaincyf/huashu-md-html", desc: "Markdown/HTML bidirectional pipeline for AI content workflows." },
-      { rank: 39, name: "ChristianJR19/grok-animus", owner: "ChristianJR19", repo: "grok-animus", stars: 622, category: "agent", url: "https://github.com/ChristianJR19/grok-animus", desc: "Persistent AI companion engine with personality, memory, dreams, and evolution." },
-      { rank: 40, name: "regent-vcs/re_gent", owner: "regent-vcs", repo: "re_gent", stars: 613, category: "coding", url: "https://github.com/regent-vcs/re_gent", desc: "Version control for AI coding agents." },
-      { rank: 41, name: "simonlin1212/TradingAgents-astock", owner: "simonlin1212", repo: "TradingAgents-astock", stars: 605, category: "agent", url: "https://github.com/simonlin1212/TradingAgents-astock", desc: "A-share multi-agent investment research framework." },
-      { rank: 42, name: "KevRojo/Dulus", owner: "KevRojo", repo: "Dulus", stars: 589, category: "coding", url: "https://github.com/KevRojo/Dulus", desc: "Free CLI agent that turns browser sessions into a tool-calling terminal agent." },
-      { rank: 43, name: "jherrodthomas/robotics-skills-suite", owner: "jherrodthomas", repo: "robotics-skills-suite", stars: 564, category: "tooling", url: "https://github.com/jherrodthomas/robotics-skills-suite", desc: "Audit-ready Claude skills for robotics, AI/ML, ROS2, and compliance workflows." },
-      { rank: 44, name: "anysearch-ai/anysearch-mcp-server", owner: "anysearch-ai", repo: "anysearch-mcp-server", stars: 555, category: "tooling", url: "https://github.com/anysearch-ai/anysearch-mcp-server", desc: "Unified real-time search engine skill for AI agents via MCP." },
-      { rank: 45, name: "yuanzhongqiao/deepmlab", owner: "yuanzhongqiao", repo: "deepmlab", stars: 540, category: "tooling", url: "https://github.com/yuanzhongqiao/deepmlab", desc: "Open-source MATLAB alternative with LLM-driven mathematical modeling." },
-      { rank: 46, name: "ProAlit/aio-downloader", owner: "ProAlit", repo: "aio-downloader", stars: 532, category: "other", url: "https://github.com/ProAlit/aio-downloader", desc: "A downloader project that appeared in the broader AI/LLM search results." },
-      { rank: 47, name: "mrslimslim/gpt-image-canvas", owner: "mrslimslim", repo: "gpt-image-canvas", stars: 528, category: "creative", url: "https://github.com/mrslimslim/gpt-image-canvas", desc: "Local professional AI canvas built with tldraw." },
-      { rank: 48, name: "darkrishabh/agent-skills-eval", owner: "darkrishabh", repo: "agent-skills-eval", stars: 526, category: "tooling", url: "https://github.com/darkrishabh/agent-skills-eval", desc: "Test runner for AI agent skills." },
-      { rank: 49, name: "Octoday-Hub/Embodied-AI", owner: "Octoday-Hub", repo: "Embodied-AI", stars: 518, category: "learning", url: "https://github.com/Octoday-Hub/Embodied-AI", desc: "Embodied AI knowledge index and industry map." },
-      { rank: 50, name: "JustLikeCheese/LGBT-Prompt", owner: "JustLikeCheese", repo: "LGBT-Prompt", stars: 506, category: "other", url: "https://github.com/JustLikeCheese/LGBT-Prompt", desc: "A prompt-focused repository that appeared in the AI/LLM search results." }
+      { rank: 1, name: "nexu-io/html-anything", owner: "nexu-io", repo: "html-anything", stars: 5139, category: "creative", url: "https://github.com/nexu-io/html-anything", desc: "The agentic HTML editor — your local AI agent writes the HTML, you ship it." },
+      { rank: 2, name: "willchen96/mike", owner: "willchen96", repo: "mike", stars: 3527, category: "tooling", url: "https://github.com/willchen96/mike", desc: "OSS AI Legal Platform." },
+      { rank: 3, name: "strukto-ai/mirage", owner: "strukto-ai", repo: "mirage", stars: 2695, category: "infra", url: "https://github.com/strukto-ai/mirage", desc: "A Unified Virtual Filesystem For AI Agents." },
+      { rank: 4, name: "simonlin1212/a-stock-data", owner: "simonlin1212", repo: "a-stock-data", stars: 2506, category: "data", url: "https://github.com/simonlin1212/a-stock-data", desc: "Full-stack China A-Share data toolkit for AI coding assistants." },
+      { rank: 5, name: "huangserva/3DCellForge", owner: "huangserva", repo: "3DCellForge", stars: 2365, category: "creative", url: "https://github.com/huangserva/3DCellForge", desc: "AI-powered interactive 3D model generation, inspection, and presentation studio." },
+      { rank: 6, name: "yaojingang/yao-open-prompts", owner: "yaojingang", repo: "yao-open-prompts", stars: 2293, category: "learning", url: "https://github.com/yaojingang/yao-open-prompts", desc: "Chinese AI prompt library covering work, learning, content, marketing, and life scenarios." },
+      { rank: 7, name: "Nutlope/hallmark", owner: "Nutlope", repo: "hallmark", stars: 2053, category: "creative", url: "https://github.com/Nutlope/hallmark", desc: "Anti-AI-slop design skill for Claude Code, Cursor, and Codex." },
+      { rank: 8, name: "raiyanyahya/how-to-train-your-gpt", owner: "raiyanyahya", repo: "how-to-train-your-gpt", stars: 2049, category: "learning", url: "https://github.com/raiyanyahya/how-to-train-your-gpt", desc: "Build a modern LLM from scratch with every line commented." },
+      { rank: 9, name: "opensquilla/opensquilla", owner: "opensquilla", repo: "opensquilla", stars: 1988, category: "agent", url: "https://github.com/opensquilla/opensquilla", desc: "Token-efficient AI agent with higher intelligence density." },
+      { rank: 10, name: "mattpocock/dictionary-of-ai-coding", owner: "mattpocock", repo: "dictionary-of-ai-coding", stars: 1865, category: "learning", url: "https://github.com/mattpocock/dictionary-of-ai-coding", desc: "AI coding jargon, explained in plain English." },
+      { rank: 11, name: "WenyuChiou/awesome-agentic-ai-zh", owner: "WenyuChiou", repo: "awesome-agentic-ai-zh", stars: 1739, category: "learning", url: "https://github.com/WenyuChiou/awesome-agentic-ai-zh", desc: "Trilingual learning roadmap for agentic AI from LLM basics to multi-agent systems." },
+      { rank: 12, name: "Open-Less/openless", owner: "Open-Less", repo: "openless", stars: 1706, category: "tooling", url: "https://github.com/Open-Less/openless", desc: "Open-source voice input for macOS and Windows that polishes text into any app." },
+      { rank: 13, name: "datawhalechina/Agent-Learning-Hub", owner: "datawhalechina", repo: "Agent-Learning-Hub", stars: 1679, category: "learning", url: "https://github.com/datawhalechina/Agent-Learning-Hub", desc: "AI agent learning route and resource collection." },
+      { rank: 14, name: "Doorman11991/smallcode", owner: "Doorman11991", repo: "smallcode", stars: 1482, category: "coding", url: "https://github.com/Doorman11991/smallcode", desc: "AI coding agent optimized for small LLMs." },
+      { rank: 15, name: "microsoft/AI-Engineering-Coach", owner: "microsoft", repo: "AI-Engineering-Coach", stars: 1437, category: "learning", url: "https://github.com/microsoft/AI-Engineering-Coach", desc: "Better agentic engineering." },
+      { rank: 16, name: "anysearch-ai/anysearch-skill", owner: "anysearch-ai", repo: "anysearch-skill", stars: 1403, category: "tooling", url: "https://github.com/anysearch-ai/anysearch-skill", desc: "Unified real-time search engine skill for AI agents." },
+      { rank: 17, name: "StartupHakk/OpenMonoAgent.ai", owner: "StartupHakk", repo: "OpenMonoAgent.ai", stars: 1343, category: "coding", url: "https://github.com/StartupHakk/OpenMonoAgent.ai", desc: "Terminal-native coding agent powered by local LLMs." },
+      { rank: 18, name: "Helvesec/rmux", owner: "Helvesec", repo: "rmux", stars: 1264, category: "tooling", url: "https://github.com/Helvesec/rmux", desc: "Universal Rust multiplexer with a typed SDK to drive CLI or TUI apps from code." },
+      { rank: 19, name: "lightseekorg/tokenspeed", owner: "lightseekorg", repo: "tokenspeed", stars: 1197, category: "infra", url: "https://github.com/lightseekorg/tokenspeed", desc: "A speed-of-light LLM inference engine." },
+      { rank: 20, name: "noonghunna/club-3090", owner: "noonghunna", repo: "club-3090", stars: 1150, category: "infra", url: "https://github.com/noonghunna/club-3090", desc: "Community recipes for serving LLMs on RTX 3090/CUDA GPUs." },
+      { rank: 21, name: "google-antigravity/antigravity-sdk-python", owner: "google-antigravity", repo: "antigravity-sdk-python", stars: 1104, category: "agent", url: "https://github.com/google-antigravity/antigravity-sdk-python", desc: "Python library for building AI agents with Google Antigravity." },
+      { rank: 22, name: "ka-pi-ba-la/AIbijia", owner: "ka-pi-ba-la", repo: "AIbijia", stars: 1091, category: "other", url: "https://github.com/ka-pi-ba-la/AIbijia", desc: "Repository sharing lower-cost AI token information." },
+      { rank: 23, name: "sandeco/reversa", owner: "sandeco", repo: "reversa", stars: 1088, category: "coding", url: "https://github.com/sandeco/reversa", desc: "Transform legacy systems into executable specs for AI coding agents." },
+      { rank: 24, name: "yuanzhongqiao/deepmlab", owner: "yuanzhongqiao", repo: "deepmlab", stars: 1073, category: "tooling", url: "https://github.com/yuanzhongqiao/deepmlab", desc: "Open-source MATLAB alternative with LLM-driven mathematical modeling." },
+      { rank: 25, name: "beenuar/AiSOC", owner: "beenuar", repo: "AiSOC", stars: 1042, category: "security", url: "https://github.com/beenuar/AiSOC", desc: "Open-source AI-powered Security Operations Center." },
+      { rank: 26, name: "laishiwen/sven-family", owner: "laishiwen", repo: "sven-family", stars: 1008, category: "creative", url: "https://github.com/laishiwen/sven-family", desc: "AI-native product suite connecting creation, collaboration, publishing, and operations." },
+      { rank: 27, name: "jmerelnyc/Photo-agents", owner: "jmerelnyc", repo: "Photo-agents", stars: 959, category: "agent", url: "https://github.com/jmerelnyc/Photo-agents", desc: "Autonomous self-evolving agents with vision-grounded layered memory." },
+      { rank: 28, name: "lessweb/deepcode-cli", owner: "lessweb", repo: "deepcode-cli", stars: 940, category: "coding", url: "https://github.com/lessweb/deepcode-cli", desc: "Terminal AI coding assistant optimized for deep reasoning and agent skills." },
+      { rank: 29, name: "alvinunreal/openpets", owner: "alvinunreal", repo: "openpets", stars: 939, category: "creative", url: "https://github.com/alvinunreal/openpets", desc: "Desktop pets for AI coding agents with live coding status." },
+      { rank: 30, name: "nduckmink/arkon", owner: "nduckmink", repo: "arkon", stars: 896, category: "infra", url: "https://github.com/nduckmink/arkon", desc: "Enterprise AI knowledge hub and MCP server for RAG context and policy management." },
+      { rank: 31, name: "microsoft/SkillOpt", owner: "microsoft", repo: "SkillOpt", stars: 888, category: "tooling", url: "https://github.com/microsoft/SkillOpt", desc: "Text-space optimizer that trains reusable natural-language skills for frozen LLM agents." },
+      { rank: 32, name: "deeplethe/forkd", owner: "deeplethe", repo: "forkd", stars: 831, category: "infra", url: "https://github.com/deeplethe/forkd", desc: "Fork() for AI agent microVMs with fast branching and snapshot CoW." },
+      { rank: 33, name: "lynote-ai/humanize-text", owner: "lynote-ai", repo: "humanize-text", stars: 812, category: "tooling", url: "https://github.com/lynote-ai/humanize-text", desc: "Open-source AI text humanizer for rewriting AI-generated content." },
+      { rank: 34, name: "Snaplii-Inc/agent-to-merchant-payments", owner: "Snaplii-Inc", repo: "agent-to-merchant-payments", stars: 805, category: "agent", url: "https://github.com/Snaplii-Inc/agent-to-merchant-payments", desc: "A payment layer for AI agents using tokenized merchant gift cards." },
+      { rank: 35, name: "raindrop-ai/workshop", owner: "raindrop-ai", repo: "workshop", stars: 757, category: "tooling", url: "https://github.com/raindrop-ai/workshop", desc: "Give your coding agent the power to write and run agent evals." },
+      { rank: 36, name: "ComposioHQ/trustclaw", owner: "ComposioHQ", repo: "trustclaw", stars: 715, category: "agent", url: "https://github.com/ComposioHQ/trustclaw", desc: "A self-hostable personal AI agent with vector memory and Telegram integration." },
+      { rank: 37, name: "KevRojo/Dulus", owner: "KevRojo", repo: "Dulus", stars: 703, category: "coding", url: "https://github.com/KevRojo/Dulus", desc: "Free CLI agent that turns browser sessions into a tool-calling terminal agent." },
+      { rank: 38, name: "alchaincyf/huashu-md-html", owner: "alchaincyf", repo: "huashu-md-html", stars: 687, category: "tooling", url: "https://github.com/alchaincyf/huashu-md-html", desc: "Markdown/HTML bidirectional pipeline for AI content workflows." },
+      { rank: 39, name: "Continuum-AI-Corp/OrcaRouter-Lite", owner: "Continuum-AI-Corp", repo: "OrcaRouter-Lite", stars: 683, category: "infra", url: "https://github.com/Continuum-AI-Corp/OrcaRouter-Lite", desc: "Self-hosted LLM router with an OpenAI-compatible interface." },
+      { rank: 40, name: "simonlin1212/TradingAgents-astock", owner: "simonlin1212", repo: "TradingAgents-astock", stars: 675, category: "agent", url: "https://github.com/simonlin1212/TradingAgents-astock", desc: "A-share multi-agent investment research framework." },
+      { rank: 41, name: "TeamDev-IP/MoIcons", owner: "TeamDev-IP", repo: "MoIcons", stars: 672, category: "creative", url: "https://github.com/TeamDev-IP/MoIcons", desc: "Generate macOS app icons using AI." },
+      { rank: 42, name: "anysearch-ai/anysearch-mcp-server", owner: "anysearch-ai", repo: "anysearch-mcp-server", stars: 639, category: "tooling", url: "https://github.com/anysearch-ai/anysearch-mcp-server", desc: "Unified real-time search engine skill for AI agents via MCP." },
+      { rank: 43, name: "regent-vcs/re_gent", owner: "regent-vcs", repo: "re_gent", stars: 623, category: "coding", url: "https://github.com/regent-vcs/re_gent", desc: "Version control for AI coding agents." },
+      { rank: 44, name: "basketikun/infinite-canvas", owner: "basketikun", repo: "infinite-canvas", stars: 607, category: "creative", url: "https://github.com/basketikun/infinite-canvas", desc: "Open-source infinite canvas workbench for AI creation with image/video generation." },
+      { rank: 45, name: "Ontos-AI/knowhere", owner: "Ontos-AI", repo: "knowhere", stars: 603, category: "infra", url: "https://github.com/Ontos-AI/knowhere", desc: "Extracts, parses, and outputs structured chunks ready for AI Agents and RAG." },
+      { rank: 46, name: "Octoday-Hub/Embodied-AI", owner: "Octoday-Hub", repo: "Embodied-AI", stars: 586, category: "learning", url: "https://github.com/Octoday-Hub/Embodied-AI", desc: "Embodied AI knowledge index and industry map." },
+      { rank: 47, name: "juanjuandog/FinSight-AI", owner: "juanjuandog", repo: "FinSight-AI", stars: 574, category: "agent", url: "https://github.com/juanjuandog/FinSight-AI", desc: "AI equity research agent with resilient workflows and pgvector RAG." },
+      { rank: 48, name: "mrslimslim/gpt-image-canvas", owner: "mrslimslim", repo: "gpt-image-canvas", stars: 563, category: "creative", url: "https://github.com/mrslimslim/gpt-image-canvas", desc: "Local professional AI canvas built with tldraw." },
+      { rank: 49, name: "LiuMengxuan04/shushu-internship-tool", owner: "LiuMengxuan04", repo: "shushu-internship-tool", stars: 551, category: "tooling", url: "https://github.com/LiuMengxuan04/shushu-internship-tool", desc: "Turns job descriptions into projects, projects into resumes, resumes into interviews." },
+      { rank: 50, name: "ProAlit/aio-downloader", owner: "ProAlit", repo: "aio-downloader", stars: 537, category: "other", url: "https://github.com/ProAlit/aio-downloader", desc: "A downloader project that appeared in the broader AI/LLM search results." },
+      { rank: 51, name: "LocoreMind/locoagent", owner: "LocoreMind", repo: "locoagent", stars: 536, category: "agent", url: "https://github.com/LocoreMind/locoagent", desc: "AI-powered social media agent with real browser automation." },
+      { rank: 52, name: "darkrishabh/agent-skills-eval", owner: "darkrishabh", repo: "agent-skills-eval", stars: 532, category: "tooling", url: "https://github.com/darkrishabh/agent-skills-eval", desc: "Test runner for AI agent skills." },
+      { rank: 53, name: "jherrodthomas/robotics-skills-suite", owner: "jherrodthomas", repo: "robotics-skills-suite", stars: 528, category: "tooling", url: "https://github.com/jherrodthomas/robotics-skills-suite", desc: "Audit-ready Claude skills for robotics, AI/ML, ROS2, and compliance workflows." },
+      { rank: 54, name: "openlake-project/openlake", owner: "openlake-project", repo: "openlake", stars: 515, category: "infra", url: "https://github.com/openlake-project/openlake", desc: "Hyper-efficient storage for GPU workloads — feed your GPUs at blazing fast speeds." },
+      { rank: 55, name: "nolanx-ai/nolanx.ai", owner: "nolanx-ai", repo: "nolanx.ai", stars: 512, category: "creative", url: "https://github.com/nolanx-ai/nolanx.ai", desc: "Open-sourced AI Netflix." },
+      { rank: 56, name: "JustLikeCheese/LGBT-Prompt", owner: "JustLikeCheese", repo: "LGBT-Prompt", stars: 508, category: "other", url: "https://github.com/JustLikeCheese/LGBT-Prompt", desc: "A prompt-focused repository that appeared in the AI/LLM search results." },
+      { rank: 57, name: "agentic-in/elephant-agent", owner: "agentic-in", repo: "elephant-agent", stars: 504, category: "agent", url: "https://github.com/agentic-in/elephant-agent", desc: "Personal-Model-first self-evolving AI agent." },
+      { rank: 58, name: "chorus-codes/chorus", owner: "chorus-codes", repo: "chorus", stars: 487, category: "tooling", url: "https://github.com/chorus-codes/chorus", desc: "Multi-LLM peer review for code decisions before you ship." },
+      { rank: 59, name: "WantongC/journal-adapt-writing-skill", owner: "WantongC", repo: "journal-adapt-writing-skill", stars: 462, category: "learning", url: "https://github.com/WantongC/journal-adapt-writing-skill", desc: "Learn any journal's writing conventions and revise your manuscript to match." },
+      { rank: 60, name: "husu/loom", owner: "husu", repo: "loom", stars: 446, category: "tooling", url: "https://github.com/husu/loom", desc: "AI agent for writing API documentation with vibe-coding style." },
+      { rank: 61, name: "Sayhi-bzb/Agent-HTML", owner: "Sayhi-bzb", repo: "Agent-HTML", stars: 440, category: "tooling", url: "https://github.com/Sayhi-bzb/Agent-HTML", desc: "AI-friendly semantic HTML architecture for human-agent collaboration." },
+      { rank: 62, name: "nateherkai/AIS-OS", owner: "nateherkai", repo: "AIS-OS", stars: 439, category: "learning", url: "https://github.com/nateherkai/AIS-OS", desc: "AI Operating System starter kit for Claude Code with onboard/audit/level-up skills." },
+      { rank: 63, name: "AzmxAI/azmx", owner: "AzmxAI", repo: "azmx", stars: 436, category: "agent", url: "https://github.com/AzmxAI/azmx", desc: "Sovereign AI agent platform." },
+      { rank: 64, name: "ifixai-ai/iFixAi", owner: "ifixai-ai", repo: "iFixAi", stars: 431, category: "security", url: "https://github.com/ifixai-ai/iFixAi", desc: "Open-source diagnostic for AI misalignment across 32 tests." },
+      { rank: 65, name: "zhaoxuya520/reverse-skill-private", owner: "zhaoxuya520", repo: "reverse-skill-private", stars: 426, category: "security", url: "https://github.com/zhaoxuya520/reverse-skill-private", desc: "Reverse-engineering and security skill router for AI coding clients." },
+      { rank: 66, name: "Ktovoz/Skiritai", owner: "Ktovoz", repo: "Skiritai", stars: 417, category: "tooling", url: "https://github.com/Ktovoz/Skiritai", desc: "AI-powered test automation that explores paths and generates replayable scripts." },
+      { rank: 67, name: "NirDiamant/Agent_Memory_Techniques", owner: "NirDiamant", repo: "Agent_Memory_Techniques", stars: 417, category: "learning", url: "https://github.com/NirDiamant/Agent_Memory_Techniques", desc: "Agent memory for LLMs: 30 runnable notebooks on memory patterns." },
+      { rank: 68, name: "PaperGuru-AI/PaperGuru-Benchmark", owner: "PaperGuru-AI", repo: "PaperGuru-Benchmark", stars: 413, category: "learning", url: "https://github.com/PaperGuru-AI/PaperGuru-Benchmark", desc: "Lifecycle-aware memory benchmark for long-horizon LLM agents." },
+      { rank: 69, name: "Belkins/ai-dive-deep", owner: "Belkins", repo: "ai-dive-deep", stars: 411, category: "learning", url: "https://github.com/Belkins/ai-dive-deep", desc: "Operator's field manual with interactive widgets and embedded case studies." },
+      { rank: 70, name: "AFK-surf/OpenBridge", owner: "AFK-surf", repo: "OpenBridge", stars: 398, category: "agent", url: "https://github.com/AFK-surf/OpenBridge", desc: "Free, safe and open agent for everything — alternative to Claude Cowork and Codex." },
+      { rank: 71, name: "chiennv2000/orthrus", owner: "chiennv2000", repo: "orthrus", stars: 372, category: "infra", url: "https://github.com/chiennv2000/orthrus", desc: "Fast, lossless LLM inference via dual-view diffusion decoding." },
+      { rank: 72, name: "GanyuanRan/Aegis", owner: "GanyuanRan", repo: "Aegis", stars: 369, category: "coding", url: "https://github.com/GanyuanRan/Aegis", desc: "Make AI coding agents architecture-aware, evidence-verified, and drift-checked." },
+      { rank: 73, name: "statewright/statewright", owner: "statewright", repo: "statewright", stars: 360, category: "tooling", url: "https://github.com/statewright/statewright", desc: "State-machine guardrails for AI agents." },
+      { rank: 74, name: "study8677/awesome-architecture", owner: "study8677", repo: "awesome-architecture", stars: 356, category: "learning", url: "https://github.com/study8677/awesome-architecture", desc: "21 architecture maps including AI gateway, RAG, agents, inference and vector DB." },
+      { rank: 75, name: "python-telegramBot/crypto-liquidity-ai-trading-bot", owner: "python-telegramBot", repo: "crypto-liquidity-ai-trading-bot", stars: 347, category: "agent", url: "https://github.com/python-telegramBot/crypto-liquidity-ai-trading-bot", desc: "Crypto trading bot with liquidity, order book and market microstructure analysis." },
+      { rank: 76, name: "tophant-ai/promptbeat", owner: "tophant-ai", repo: "promptbeat", stars: 342, category: "security", url: "https://github.com/tophant-ai/promptbeat", desc: "Break your AI before they do — AI security testing." },
+      { rank: 77, name: "RachelForster/Shinsekai", owner: "RachelForster", repo: "Shinsekai", stars: 338, category: "creative", url: "https://github.com/RachelForster/Shinsekai", desc: "AI RPG maker." },
+      { rank: 78, name: "iam567/LifeManga", owner: "iam567", repo: "LifeManga", stars: 338, category: "creative", url: "https://github.com/iam567/LifeManga", desc: "iOS SwiftUI app for AI-generated manga." },
+      { rank: 79, name: "dex-original/okx-agent-trade-kit", owner: "dex-original", repo: "okx-agent-trade-kit", stars: 338, category: "agent", url: "https://github.com/dex-original/okx-agent-trade-kit", desc: "OKX trading bot CLI with MCP support for cryptocurrency markets." },
+      { rank: 80, name: "Callous-0923/agent-study", owner: "Callous-0923", repo: "agent-study", stars: 329, category: "learning", url: "https://github.com/Callous-0923/agent-study", desc: "36-chapter AI Agent full-stack course covering ReAct, MCP/A2A, RAG, DSPy and observability." },
+      { rank: 81, name: "peter123023/awesome-claude-api", owner: "peter123023", repo: "awesome-claude-api", stars: 328, category: "other", url: "https://github.com/peter123023/awesome-claude-api", desc: "Curated list of reliable Claude API proxy services." },
+      { rank: 82, name: "trading-2028/polymarket-ai-trading", owner: "trading-2028", repo: "polymarket-ai-trading", stars: 324, category: "agent", url: "https://github.com/trading-2028/polymarket-ai-trading", desc: "Polymarket AI trading bot for prediction markets." },
+      { rank: 83, name: "basionwang-bot/HermesPet", owner: "basionwang-bot", repo: "HermesPet", stars: 324, category: "creative", url: "https://github.com/basionwang-bot/HermesPet", desc: "Desktop AI companion that lives in your MacBook's notch." },
+      { rank: 84, name: "XingYu-Zhong/DeepSeek-GUI", owner: "XingYu-Zhong", repo: "DeepSeek-GUI", stars: 318, category: "tooling", url: "https://github.com/XingYu-Zhong/DeepSeek-GUI", desc: "AI agent workspace for DeepSeek with Code and Claw modes." },
+      { rank: 85, name: "VILA-Lab/FigMirror", owner: "VILA-Lab", repo: "FigMirror", stars: 315, category: "tooling", url: "https://github.com/VILA-Lab/FigMirror", desc: "Automated AI agent for plotting data in any paper's figure style." },
+      { rank: 86, name: "haidang1810/md2html", owner: "haidang1810", repo: "md2html", stars: 313, category: "tooling", url: "https://github.com/haidang1810/md2html", desc: "Skill that turns long-form Markdown into self-contained HTML with Mermaid and TOC." },
+      { rank: 87, name: "Mininglamp-AI/cider", owner: "Mininglamp-AI", repo: "cider", stars: 308, category: "infra", url: "https://github.com/Mininglamp-AI/cider", desc: "W8A8/W4A8 inference on Apple Silicon for faster LLM prefill." },
+      { rank: 88, name: "Dangerous-hole/Pumpfun_AI_Trading_Bot", owner: "Dangerous-hole", repo: "Pumpfun_AI_Trading_Bot", stars: 307, category: "agent", url: "https://github.com/Dangerous-hole/Pumpfun_AI_Trading_Bot", desc: "Pump.fun Solana AI trading and meme coin automation bot." },
+      { rank: 89, name: "eight-acres-lab/skillplus", owner: "eight-acres-lab", repo: "skillplus", stars: 306, category: "tooling", url: "https://github.com/eight-acres-lab/skillplus", desc: "Compilable skill package standard for reliable content-generation agents." },
+      { rank: 90, name: "ybuild-ai/ai-game-art-pipeline-skill", owner: "ybuild-ai", repo: "ai-game-art-pipeline-skill", stars: 306, category: "creative", url: "https://github.com/ybuild-ai/ai-game-art-pipeline-skill", desc: "Agent skill for turning AI images and videos into playable game art assets." },
+      { rank: 91, name: "AnnenkovLabs/girl-agent", owner: "AnnenkovLabs", repo: "girl-agent", stars: 305, category: "agent", url: "https://github.com/AnnenkovLabs/girl-agent", desc: "AI companion with human-like behavior, mood, schedule and memory." },
+      { rank: 92, name: "Evokoa/pgGraph", owner: "Evokoa", repo: "pgGraph", stars: 304, category: "infra", url: "https://github.com/Evokoa/pgGraph", desc: "Graph database superpowers for existing Postgres data." },
+      { rank: 93, name: "Hello-Application-XH/HelloGML", owner: "Hello-Application-XH", repo: "HelloGML", stars: 299, category: "tooling", url: "https://github.com/Hello-Application-XH/HelloGML", desc: "Cloudflare Worker 2API layer providing OpenAI/Claude/Gemini-compatible interfaces." },
+      { rank: 94, name: "Zhou-Shilin/Aether", owner: "Zhou-Shilin", repo: "Aether", stars: 295, category: "agent", url: "https://github.com/Zhou-Shilin/Aether", desc: "Localized general-purpose AI Agent for Android." },
+      { rank: 95, name: "FrankHui/paragents", owner: "FrankHui", repo: "paragents", stars: 295, category: "agent", url: "https://github.com/FrankHui/paragents", desc: "Parallel AI agent sessions in one panel with permission-aware tools." },
+      { rank: 96, name: "seochecks-ai/slopless", owner: "seochecks-ai", repo: "slopless", stars: 294, category: "tooling", url: "https://github.com/seochecks-ai/slopless", desc: "Deterministic textlint rules and CLI for catching prose slop in English Markdown." },
+      { rank: 97, name: "agentara/skills", owner: "agentara", repo: "skills", stars: 294, category: "tooling", url: "https://github.com/agentara/skills", desc: "Original and practical skills for AI builders." },
+      { rank: 98, name: "ItsssssJack/power-design", owner: "ItsssssJack", repo: "power-design", stars: 293, category: "creative", url: "https://github.com/ItsssssJack/power-design", desc: "Claude skill for slides that don't look AI-made — brand DNA × 20 design principles." },
+      { rank: 99, name: "himomohi/AirTranslate", owner: "himomohi", repo: "AirTranslate", stars: 292, category: "tooling", url: "https://github.com/himomohi/AirTranslate", desc: "AirTranslate macOS app." },
+      { rank: 100, name: "akitaonrails/ai-memory", owner: "akitaonrails", repo: "ai-memory", stars: 292, category: "infra", url: "https://github.com/akitaonrails/ai-memory", desc: "Long-term memory for agent coding CLIs with handoff between agent vendors." }
     ];
 
     const featuredGrid = document.getElementById("featuredGrid");
