@@ -1,0 +1,96 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+*.key
+*.pem
+*.p12
+*.cert
+*.crt
+config/secrets.json
+secrets/
+
+# API keys and credentials (if accidentally created)
+*apikey*
+*api-key*
+*api_key*
+*secret*
+*password*
+*credentials*
+
+# Operating system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+*~
+.project
+.settings/
+.classpath
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+.temp/
+tmp/
+
+# Node modules (if JavaScript dependencies are added in the future)
+node_modules/
+jspm_packages/
+
+# Build outputs (if build process is added in the future)
+dist/
+dist-ssr/
+build/
+out/
+.next/
+.nuxt/
+.output/
+
+# Package manager files (if dependencies are added)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Testing
+coverage/
+*.lcov
+.nyc_output/
+test-results/
+playwright-report/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Local configuration overrides
+config.local.js
+config.local.json
