@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
   <title>Top 50 New AI/LLM GitHub Repos</title>
   <meta name="description" content="Browse the top 50 new AI and LLM GitHub repositories from the last 30 days, sorted by stars." />
   <meta property="og:title" content="Top 50 New AI/LLM GitHub Repos" />
@@ -683,6 +685,12 @@
       });
     }
 
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
     function buildFeatured() {
       const topFive = [...repos].sort((a, b) => b.stars - a.stars).slice(0, 5);
       featuredGrid.innerHTML = "";
@@ -690,15 +698,15 @@
         const card = document.createElement("article");
         card.className = "featured-card";
         card.innerHTML = `
-          <div class="big-rank">Featured #${repo.rank}</div>
-          <h3><a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a></h3>
-          <p class="featured-desc">${repo.desc}</p>
+          <div class="big-rank">Featured #${escapeHtml(String(repo.rank))}</div>
+          <h3><a href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">${escapeHtml(repo.name)}</a></h3>
+          <p class="featured-desc">${escapeHtml(repo.desc)}</p>
           <div class="pill-row">
-            <span class="pill">${categoryLabel(repo.category)}</span>
+            <span class="pill">${escapeHtml(categoryLabel(repo.category))}</span>
             <span class="pill">★ ${formatStars(repo.stars)}</span>
           </div>
           <div class="actions">
-            <a class="btn primary" href="${repo.url}" target="_blank" rel="noreferrer">Open Repo</a>
+            <a class="btn primary" href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">Open Repo</a>
           </div>
         `;
         featuredGrid.appendChild(card);
@@ -711,29 +719,29 @@
       card.className = "repo-card";
       card.innerHTML = `
         <div class="row">
-          <div class="rank">#${repo.rank}</div>
+          <div class="rank">#${escapeHtml(String(repo.rank))}</div>
           <div class="stars">★ ${formatStars(repo.stars)}</div>
         </div>
 
         <div>
           <h3 class="repo-name">
-            <a href="${repo.url}" target="_blank" rel="noreferrer">${repo.name}</a>
+            <a href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">${escapeHtml(repo.name)}</a>
           </h3>
-          <div class="owner">@${repo.owner}</div>
+          <div class="owner">@${escapeHtml(repo.owner)}</div>
         </div>
 
         <div class="pill-row">
-          <span class="pill">${categoryLabel(repo.category)}</span>
+          <span class="pill">${escapeHtml(categoryLabel(repo.category))}</span>
           <span class="pill">${formatStars(repo.stars)} stars</span>
         </div>
 
-        <p class="repo-desc">${repo.desc}</p>
+        <p class="repo-desc">${escapeHtml(repo.desc)}</p>
 
-        <div class="bar"><span style="width:${pct}%"></span></div>
+        <div class="bar"><span style="width:${Math.min(100, Math.max(0, pct))}%"></span></div>
 
         <div class="actions">
-          <a class="btn primary" href="${repo.url}" target="_blank" rel="noreferrer">Open Repo</a>
-          <button class="btn" data-copy="${repo.url}">Copy Link</button>
+          <a class="btn primary" href="${escapeHtml(repo.url)}" target="_blank" rel="noreferrer">Open Repo</a>
+          <button class="btn" data-copy="${escapeHtml(repo.url)}">Copy Link</button>
         </div>
       `;
       return card;
